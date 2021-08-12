@@ -1,8 +1,8 @@
-name: .NET
+name: JokesCitrix Proj Build
 
 on:
-  push:
-    branches: [ master ]
+  push: # 触发方式 push
+    branches: [ master ]  # 执行分支 master
   pull_request:
     branches: [ master ]
 
@@ -13,13 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2  #拉取代码
-    - name: Setup .NET
+    - name: Setup .NET  # 安装.net core 
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
+    - name: Restore dependencies # 安装依赖项
       run: dotnet restore
-    - name: Build
+    - name: Build  # build proj
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
