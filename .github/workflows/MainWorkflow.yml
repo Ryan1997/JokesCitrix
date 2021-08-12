@@ -25,4 +25,4 @@ jobs:
           -Dsonar.projectKey=Ryan1997_JokesCitrix
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: "e3a3444d30ceaf9241f330db111bef14b0993af5"
