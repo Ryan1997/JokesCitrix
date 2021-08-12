@@ -14,7 +14,7 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
-        projectBaseDir: "/."
+        projectBaseDir: "/home/runner/work/JokesCitrix/JokesCitrix/JokesWebApp/wwwroot/lib"
         args: >
           -Dsonar.organization=ryan1997
           -Dsonar.projectKey=Ryan1997_JokesCitrix
