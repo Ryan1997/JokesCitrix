@@ -1,6 +1,5 @@
 on:
   # Trigger analysis when pushing in master or pull requests, and when creating
-  # a pull request. 
   push:
     branches:
       - master
@@ -11,18 +10,14 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      #with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        #fetch-depth: 0
-        
+    - uses: actions/checkout@v2  
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
-        projectBaseDir: "/home/runner/work/JokesCitrix/JokesCitrix/JokesWebApp/wwwroot/lib"
+        projectBaseDir: "/."
         args: >
           -Dsonar.organization=ryan1997
           -Dsonar.projectKey=Ryan1997_JokesCitrix
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: "e3a3444d30ceaf9241f330db111bef14b0993af5"
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
